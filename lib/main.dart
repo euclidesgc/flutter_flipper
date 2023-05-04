@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_flipperkit/flutter_flipperkit.dart';
@@ -40,6 +42,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final catFacts = ValueNotifier<String>('');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,27 +54,35 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              'lalala',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            ValueListenableBuilder(
+                valueListenable: catFacts,
+                builder: (context, value, _) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Cat Fact:\n$value'),
+                  );
+                }),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
+          final int randomFact = Random().nextInt(5);
+
           final dio = Dio();
           const url = 'https://cat-fact.herokuapp.com/facts';
-          dio.get(url).then(
-                (value) => debugPrint('$value'),
-              );
+          final response = await dio.get(url);
+          catFacts.value = response.data[randomFact]['text'];
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    catFacts.dispose();
+    super.dispose();
   }
 }
