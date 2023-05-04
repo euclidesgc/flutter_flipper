@@ -34,8 +34,8 @@ dependencies:
   dio: ^5.1.1
   flutter_flipperkit:
     git:
-      url: https://github.com/prasetya4di/flutter_flipperkit.git
-      ref: fix_http_client_implementation
+      url: git@github.com:euclidesgc/flutter_flipperkit.git
+      ref: master
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -73,9 +73,9 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: fix_http_client_implementation
-      resolved-ref: a11748df3f9176474a845ae359803491a99960fa
-      url: "https://github.com/prasetya4di/flutter_flipperkit.git"
+      ref: master
+      resolved-ref: eff3946a94e1c8c19c0cab92c2a00a78f5ec1c59
+      url: "git@github.com:euclidesgc/flutter_flipperkit.git"
     source: git
     version: "0.0.28"
   flutter_lints:
