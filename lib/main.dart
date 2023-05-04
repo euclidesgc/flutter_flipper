@@ -11,7 +11,7 @@ void main() {
   flipperClient.addPlugin(FlipperReduxInspectorPlugin());
   flipperClient.addPlugin(FlipperSharedPreferencesPlugin());
   flipperClient.start();
-  
+
   runApp(const MyApp());
 }
 
@@ -62,10 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Dio dio = Dio();
-          dio
-              .get('https://cat-fact.herokuapp.com/facts')
-              .then((value) => debugPrint('$value'));
+          final dio = Dio();
+          const url = 'https://cat-fact.herokuapp.com/facts';
+          dio.get(url).then(
+                (value) => debugPrint('$value'),
+              );
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
