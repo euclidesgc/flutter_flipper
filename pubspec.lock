@@ -72,12 +72,10 @@ packages:
   flutter_flipperkit:
     dependency: "direct main"
     description:
-      path: "."
-      ref: master
-      resolved-ref: eff3946a94e1c8c19c0cab92c2a00a78f5ec1c59
-      url: "git@github.com:euclidesgc/flutter_flipperkit.git"
-    source: git
-    version: "0.0.28"
+      name: flutter_flipperkit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.29"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -202,4 +200,4 @@ packages:
     version: "2.1.2"
 sdks:
   dart: ">=2.18.6 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=2.5.0"
