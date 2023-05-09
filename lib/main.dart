@@ -7,14 +7,14 @@ import 'package:flutter_flipperkit/flutter_flipperkit.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   
-  const isHomologationApp = true;
+  // const isHomologationApp = true;
 
-  if (isHomologationApp) {
-    FlipperClient flipperClient = FlipperClient.getDefault();
-    flipperClient.addPlugin(FlipperNetworkPlugin());
-    flipperClient.addPlugin(FlipperSharedPreferencesPlugin());
-    flipperClient.start();
-  }
+  // if (isHomologationApp) {
+  //   FlipperClient flipperClient = FlipperClient.getDefault();
+  //   flipperClient.addPlugin(FlipperNetworkPlugin());
+  //   flipperClient.addPlugin(FlipperSharedPreferencesPlugin());
+  //   flipperClient.start();
+  // }
 
   runApp(const MyApp());
 }
